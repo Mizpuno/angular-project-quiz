@@ -11,7 +11,7 @@
         <!-- Generate the choice for my question. -->
         <div class="row g-2">
           <div *ngFor="let choice of question[quizPage].choices" class="col-xs-12 col-md-6">
-            <button (click)="onClickConfirm(choice)" class="btn btn-outline-primary" style="width: 100%;">{{choice.choice}}</button>
+            <button (click)="onClickConfirm(choice)" class="btn btn-primary" style="width: 100%;">{{choice.choice}}</button>
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
             Your Score: {{score}}
           </div>
           <div>
-            <button (click)="resetQuiz()" class="btn btn-outline-warning" style="width: 50%;">Exam Again</button>
+            <button (click)="resetQuiz()" class="btn btn-warning" style="width: 50%;">Exam Again</button>
           </div>
           
         </div>

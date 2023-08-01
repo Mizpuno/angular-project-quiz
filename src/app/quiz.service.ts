@@ -6,6 +6,7 @@ import { Question } from './question';
 })
 
 export class QuizService {
+  rdata: Question[] = []
   quizData: Question[] = [
     {
       id: 1,
@@ -196,5 +197,13 @@ export class QuizService {
 
   getQuizData() {
     return this.quizData
+  }
+
+  getQuizDataNoImage() {
+    this.quizData.forEach(value => {
+      if (value.image == null) this.rdata.push(value)
+    })
+
+    return this.rdata
   }
 }
