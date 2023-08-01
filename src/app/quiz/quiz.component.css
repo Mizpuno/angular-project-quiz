@@ -1,0 +1,15 @@
+.vertical-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.outline {
+    width: 760px;
+}
+
+img {
+    height: 200px;
+    box-shadow: 5px 5px 10px grey;
+    object-fit: cover;
+}

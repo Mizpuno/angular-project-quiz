@@ -1,0 +1,39 @@
+
+<div class="vertical-center">
+    <ng-template [ngIf]="!isEnd" [ngIfElse]="showScore">
+
+      <!-- The question text of all question -->
+      <div class="outline container text-center p-3">
+        <h2>Question {{quizPage + 1}} of {{question.length}}</h2>
+        <h3 class="mb-5 mt-3">{{question[quizPage].text}}</h3>
+        <img *ngIf="question[quizPage].image" [src]="question[quizPage].image" class="img-set mb-5 rounded mx-auto d-block">
+
+        <!-- Generate the choice for my question. -->
+        <div class="row g-2">
+          <div *ngFor="let choice of question[quizPage].choices" class="col-xs-12 col-md-6">
+            <button (click)="onClickConfirm(choice)" class="btn btn-outline-primary" style="width: 100%;">{{choice.choice}}</button>
+          </div>
+        </div>
+      </div>
+
+    </ng-template>
+
+    <ng-template #showScore>
+      <div class="container" style="max-width: 800px;">
+        
+        <div class="row text-center">
+          <div class="col-12 h2">
+            Your Score: {{score}}
+          </div>
+          <div>
+            <button (click)="resetQuiz()" class="btn btn-outline-warning" style="width: 50%;">Exam Again</button>
+          </div>
+          
+        </div>
+
+      </div>
+    </ng-template>
+  </div>
+
+
+
