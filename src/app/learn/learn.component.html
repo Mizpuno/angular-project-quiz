@@ -2,11 +2,10 @@
     <div class="outline container p-0">
         <div class="d-flex justify-content-center">
             <div class="btn-group">
-                <button (click)="onClickEachQuestion()" class="btn btn-outline-primary" aria-current="page">Each Question</button>
-                <button (click)="onClickQuestionList()" class="btn btn-outline-primary">Question List</button>
+                <button (click)="onClickEachQuestion()" class="btn " [ngClass]="{'btn-primary': !isSwitch, 'btn-outline-primary': isSwitch}">Each Question</button>
+                <button (click)="onClickQuestionList()" class="btn " [ngClass]="{'btn-primary': isSwitch, 'btn-outline-primary': !isSwitch}">Question List</button>
             </div>
         </div>
-       
 
         <ng-template [ngIf]="!isSwitch" [ngIfElse]="QuestionList">
             <div class="container text-center mt-5">
@@ -25,7 +24,7 @@
             <div class="outline container p-3 mt-5">
                 <div *ngFor="let quiz of question" class="row row-cols-2 justify-content-center mb-2">
                     <div class="col col-8">{{quiz.text}}</div>
-                    <div class="col col-4 ps-5">🚀 <b>{{getOverallTrueAnswer(quiz.choices)}}</b></div>
+                    <div class="col col-4 ps-5">👍 <b>{{getOverallTrueAnswer(quiz.choices)}}</b></div>
                 </div>
             </div>
         </ng-template>  
